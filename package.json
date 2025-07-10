@@ -29,16 +29,16 @@
       ]
     },
     "configuration": {
-    "type": "object",
-    "title": "Squompile Configuration",
-    "properties": {
-      "squompile.compileFlags": {
-        "type": "string",
-        "default": "-std=c++17 -Wall -Wextra -Wpedantic -g",
-        "description": "Additional flags to pass to g++ during compilation."
+      "type": "object",
+      "title": "Squompile Configuration",
+      "properties": {
+        "squompile.compileFlags": {
+          "type": "string",
+          "default": "-std=c++17 -Wall -Wextra -Wpedantic -g",
+          "description": "Additional flags to pass to g++ during compilation."
+        }
       }
     }
-  }
   },
   "scripts": {
     "vscode:prepublish": "pnpm run compile",
@@ -57,9 +57,11 @@
     "@vscode/test-cli": "^0.0.11",
     "@vscode/test-electron": "^2.5.2",
     "eslint": "^9.25.1",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vsce": "^2.15.0"
   },
   "dependencies": {
+    "@vscode/vsce": "^3.6.0",
     "glob": "^11.0.3"
   }
 }
