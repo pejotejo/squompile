@@ -34,7 +34,7 @@
     "properties": {
       "squompile.compileFlags": {
         "type": "string",
-        "default": "-std=c++17 -Wall -Wextra",
+        "default": "-std=c++17 -Wall -Wextra -Wpedantic -g",
         "description": "Additional flags to pass to g++ during compilation."
       }
     }
