@@ -6,7 +6,7 @@ This extension creates a button to compile and run C++ code in Visual Studio Cod
 
 In a C++ file, use the Squirell icon in the top right corner to compile and run the code. The extension will automatically detect the current file's directory and compile all C++ files in that directory using g++.
 
-![](button.png)
+![](https://github.com/pejotejo/squompile/blob/main/button.png)
 
 
 When running the code, the extension will create an executable file in the same directory as the source files. The name of the executable will be based on the name of the first source file compiled.
