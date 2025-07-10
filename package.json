@@ -1,0 +1,65 @@
+{
+  "name": "squompile",
+  "displayName": "Squompile",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.101.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "squompile.compile",
+        "title": "Compile C++ File",
+        "icon": "$(squirrel)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "squompile.compile",
+          "when": "resourceLangId == cpp",
+          "group": "navigation@0"
+        }
+      ]
+    },
+    "configuration": {
+    "type": "object",
+    "title": "Squompile Configuration",
+    "properties": {
+      "squompile.compileFlags": {
+        "type": "string",
+        "default": "-std=c++17 -Wall -Wextra",
+        "description": "Additional flags to pass to g++ during compilation."
+      }
+    }
+  }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.101.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.25.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "glob": "^11.0.3"
+  }
+}
